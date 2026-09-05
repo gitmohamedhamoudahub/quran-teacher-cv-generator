@@ -109,13 +109,16 @@
                         </div>
 
                         <div class="form-group full">
-                            <label for="quranicIjaza">الإجازات القرآنية والأسانيد *</label>
-                            <textarea id="quranicIjaza" name="quranicIjaza" placeholder="مثلاً: إجازة في القرآن الكريم برواية حفص عن عاصم، المجيز: الشيخ ..."></textarea>
+                            <label>الإجازات القرآنية والأسانيد *</label>
+                            <div id="ijazaList" class="repeat-list"></div>
+                            <button type="button" class="btn-add-row" onclick="addIjazaRow()">➕ إضافة إجازة قرآنية</button>
+                            <p class="note">أضف كل إجازة على حدة: الرواية، اسم المجيز، السنة إن وجدت</p>
                         </div>
 
                         <div class="form-group full">
-                            <label for="additionalCertificates">الدورات والشهادات التخصصية</label>
-                            <textarea id="additionalCertificates" name="additionalCertificates" placeholder="مثلاً: دورة في أحكام التجويد المتقدمة، دورة طرق التدريس عن بُعد"></textarea>
+                            <label>الدورات والشهادات التخصصية</label>
+                            <div id="courseList" class="repeat-list"></div>
+                            <button type="button" class="btn-add-row" onclick="addCourseRow()">➕ إضافة دورة / شهادة</button>
                         </div>
                     </div>
                 </div>
@@ -125,40 +128,16 @@
                     <div class="section">
                         <div class="section-title">💼 الخبرة في تعليم وتحفيظ القرآن الكريم</div>
 
-                        <div class="form-group">
-                            <div>
-                                <label for="positionName">المنصب / المركز *</label>
-                                <input type="text" id="positionName" name="positionName" placeholder="محفظ قرآن كريم">
-                            </div>
-                            <div>
-                                <label for="workPlace">اسم المركز / الأكاديمية / التدريس الخاص</label>
-                                <input type="text" id="workPlace" name="workPlace">
-                            </div>
-                        </div>
+                        <div id="experienceList" class="repeat-list"></div>
+                        <button type="button" class="btn-add-row" onclick="addExperienceRow()">➕ إضافة خبرة عملية أخرى</button>
 
-                        <div class="form-group">
+                        <div class="form-group" style="margin-top: 25px;">
                             <div>
-                                <label for="workFromYear">من سنة</label>
-                                <input type="number" id="workFromYear" name="workFromYear" min="1990" max="2100">
-                            </div>
-                            <div>
-                                <label for="workToYear">إلى سنة / حالياً</label>
-                                <input type="text" id="workToYear" name="workToYear" placeholder="حتى الآن">
-                            </div>
-                        </div>
-
-                        <div class="form-group full">
-                            <label for="jobResponsibilities">المسؤوليات والإنجازات *</label>
-                            <textarea id="jobResponsibilities" name="jobResponsibilities" placeholder="اكتب المهام والإنجازات الرئيسية"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <div>
-                                <label for="numStudents">عدد الطلاب المدرسين</label>
+                                <label for="numStudents">عدد الطلاب المدرسين (إجمالاً)</label>
                                 <input type="number" id="numStudents" name="numStudents" min="0">
                             </div>
                             <div>
-                                <label for="targetAges">الفئات العمرية المستهدفة *</label>
+                                <label for="targetAges">الفئات العمرية المستهدفة</label>
                                 <input type="text" id="targetAges" name="targetAges" placeholder="أطفال / مراهقون / شباب / كبار">
                             </div>
                         </div>

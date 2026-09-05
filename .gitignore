@@ -6,3 +6,7 @@ node_modules/
 dist/
 build/
 *.log
+
+# Generated CV exports (created locally while testing, not project files)
+السيرة_الذاتية_*.docx
+السيرة_الذاتية_*.pdf

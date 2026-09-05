@@ -216,6 +216,72 @@ button {
     margin-top: 5px;
 }
 
+/* Repeatable list items (experience / ijaza / courses) */
+.repeat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.repeat-item {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafbff;
+}
+
+.repeat-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.repeat-item-label {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 14px;
+}
+
+.repeat-item-simple textarea {
+    min-height: 60px;
+}
+
+.btn-remove-row {
+    background: #fdecea;
+    color: #f44336;
+    border: 1px solid #f5c6cb;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    line-height: 1;
+    font-size: 13px;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.btn-remove-row:hover {
+    background: #f44336;
+    color: white;
+}
+
+.btn-add-row {
+    background: #eef0ff;
+    color: #667eea;
+    border: 2px dashed #667eea;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.btn-add-row:hover {
+    background: #667eea;
+    color: white;
+}
+
 .tabs {
     display: flex;
     gap: 0;
@@ -354,4 +420,37 @@ button {
 
 .cv-section-content strong {
     color: #333;
+}
+
+.cv-section-content ul.cv-list {
+    margin: 0 0 10px 0;
+    padding-right: 20px;
+}
+
+.cv-section-content ul.cv-list li {
+    margin-bottom: 6px;
+}
+
+.cv-exp-item {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.cv-exp-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cv-muted {
+    color: #777;
+    font-size: 13px;
+}
+
+/* Force phone / email numbers to render left-to-right even inside
+   RTL Arabic text (prevents "+20 100..." from visually reordering) */
+.cv-page bdi {
+    unicode-bidi: isolate;
+    direction: ltr;
 }
