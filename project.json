@@ -1,0 +1,345 @@
+{
+  "name": "CV Form Generator",
+  "description": "أداة إنشاء السيرة الذاتية الاحترافية لمحفظي القرآن الكريم ومعلمي التجويد أونلاين",
+  "version": "1.0.0",
+  "author": "محمد",
+  "license": "MIT",
+  "repository": "local",
+  
+  "project_info": {
+    "target_users": "محفظو القرآن الكريم، معلمو التجويد، المعلمون أونلاين",
+    "main_features": [
+      "نموذج بيانات شامل بـ 5 أقسام",
+      "حفظ البيانات محلياً (localStorage)",
+      "توليد ملف Word (.docx) معبأ",
+      "دعم كامل للعربية (RTL)",
+      "واجهة responsive (موبايل + ديسكتوب)"
+    ]
+  },
+
+  "tech_stack": {
+    "frontend": {
+      "language": "HTML5 + CSS3 + Vanilla JavaScript",
+      "storage": "localStorage (browser)",
+      "libraries": [
+        "JSZip (create DOCX files)",
+        "FileSaver (download files)"
+      ]
+    },
+    "tools": {
+      "editor": "Claude Code Desktop",
+      "version_control": "Git",
+      "testing": "Browser DevTools"
+    }
+  },
+
+  "files_description": {
+    "index.html": {
+      "lines": "~130",
+      "purpose": "Main form structure with 5 tabs",
+      "key_sections": [
+        "Header (title + subtitle)",
+        "Tab navigation buttons",
+        "5 tab contents (personal, professional, qualifications, experience, teaching)",
+        "Action buttons (save, download, reset)"
+      ]
+    },
+    "styles.css": {
+      "lines": "~230",
+      "purpose": "All styling and responsive design",
+      "key_sections": [
+        "Base styles (colors, typography, spacing)",
+        "Layout (grid, flex, containers)",
+        "Form elements styling",
+        "Tab navigation styling",
+        "Buttons styling",
+        "Responsive breakpoints",
+        "Utilities (status messages, notes)"
+      ]
+    },
+    "app.js": {
+      "lines": "~280",
+      "purpose": "All JavaScript logic",
+      "key_functions": [
+        "loadData() - Load from localStorage",
+        "saveData() - Save to localStorage",
+        "resetForm() - Clear all data",
+        "switchTab() - Tab navigation",
+        "generateDocument() - Create Word file",
+        "createWordXml() - Word document structure",
+        "escapeXml() - Escape special characters"
+      ]
+    }
+  },
+
+  "local_setup": {
+    "folder_location": "~/work/cv-form-generator",
+    "required_files": [
+      "index.html",
+      "styles.css",
+      "app.js"
+    ],
+    "optional_files": [
+      "README.md",
+      "TODO.md",
+      "QUICK_START.md",
+      "LOCAL_SETUP.md",
+      "CHEATSHEET.md"
+    ],
+    "setup_steps": [
+      "Create folder ~/work/cv-form-generator",
+      "Copy required files",
+      "Open in Claude Code: code .",
+      "Install Live Server extension",
+      "Right-click index.html → Open with Live Server",
+      "Form opens in browser and works locally"
+    ]
+  },
+
+  "development_workflow": {
+    "step1": "Edit file in Claude Code",
+    "step2": "Save (Ctrl+S)",
+    "step3": "Browser auto-refreshes with Live Server",
+    "step4": "Test in browser",
+    "step5": "Check console (F12) for errors",
+    "step6": "Commit changes (git commit)",
+    "step7": "Pick next feature from TODO.md"
+  },
+
+  "data_structure": {
+    "storage": "localStorage with key 'cvData'",
+    "format": "JSON",
+    "fields": {
+      "personal": [
+        "fullName",
+        "jobTitle",
+        "location",
+        "yearsExp",
+        "phone",
+        "email",
+        "languages"
+      ],
+      "professional": [
+        "biography"
+      ],
+      "qualifications": [
+        "academicQualification",
+        "institution",
+        "qualYear",
+        "quranicIjaza",
+        "additionalCertificates"
+      ],
+      "experience": [
+        "positionName",
+        "workPlace",
+        "workFromYear",
+        "workToYear",
+        "jobResponsibilities",
+        "numStudents",
+        "targetAges"
+      ],
+      "teaching": [
+        "platforms",
+        "lessonDuration",
+        "lessonsPerWeek",
+        "teachingDays",
+        "teachingMethod",
+        "achievements"
+      ]
+    }
+  },
+
+  "features": {
+    "current_mvp": [
+      "✅ Multi-tab form with 25+ fields",
+      "✅ Auto-save to browser storage",
+      "✅ Auto-load on page reload",
+      "✅ Generate Word document (.docx)",
+      "✅ RTL Arabic support",
+      "✅ Responsive mobile design",
+      "✅ Form validation (required fields)",
+      "✅ Status messages (success/error)"
+    ],
+    "planned_enhancements": [
+      "🔲 Image upload (profile photo + signature)",
+      "🔲 Better Word formatting (tables + styling)",
+      "🔲 Multiple CV management",
+      "🔲 Live preview pane",
+      "🔲 PDF export option",
+      "🔲 Database integration (Firebase/IndexedDB)",
+      "🔲 Auto-save every 30 seconds",
+      "🔲 Dark mode toggle",
+      "🔲 Share via URL",
+      "🔲 Form validation improvements"
+    ]
+  },
+
+  "keyboard_shortcuts": {
+    "claude_code": {
+      "open_file": "Ctrl+P",
+      "find": "Ctrl+F",
+      "replace": "Ctrl+H",
+      "save": "Ctrl+S",
+      "terminal": "Ctrl+`",
+      "format": "Shift+Alt+F",
+      "goto_line": "Ctrl+G",
+      "outline": "Ctrl+Shift+O",
+      "split_editor": "Ctrl+\\",
+      "command_palette": "Ctrl+Shift+P"
+    },
+    "browser_devtools": {
+      "open": "F12 or Ctrl+Shift+I",
+      "console": "F12 then click Console tab",
+      "inspector": "F12 then click Elements/Inspector"
+    },
+    "git": {
+      "status": "git status",
+      "diff": "git diff",
+      "add_all": "git add .",
+      "commit": "git commit -m 'message'",
+      "log": "git log --oneline",
+      "branch": "git branch",
+      "checkout": "git checkout branch-name"
+    }
+  },
+
+  "testing_checklist": {
+    "form_functionality": [
+      "Can enter text in all fields",
+      "Data persists after page reload",
+      "Tab navigation works smoothly",
+      "Save button shows success message",
+      "Reset button clears all data"
+    ],
+    "word_export": [
+      "Download button triggers download",
+      "File name includes full name",
+      "File opens in Word without errors",
+      "All data appears in document",
+      "Arabic text displays correctly"
+    ],
+    "responsiveness": [
+      "Mobile view (375px) looks good",
+      "Tablet view (768px) looks good",
+      "Desktop view (1024px+) looks good",
+      "Buttons are clickable on touch",
+      "Text is readable on all sizes"
+    ],
+    "browser_compatibility": [
+      "Works in Chrome",
+      "Works in Firefox",
+      "Works in Safari",
+      "Works in Edge",
+      "Works in mobile browsers"
+    ]
+  },
+
+  "troubleshooting": {
+    "word_not_generating": [
+      "Check browser console (F12) for errors",
+      "Verify all required fields are filled",
+      "Try different browser",
+      "Check internet connection (for CDN libraries)"
+    ],
+    "data_not_saving": [
+      "Check localStorage in F12 → Application",
+      "Try incognito mode (localStorage works there)",
+      "Clear browser cache",
+      "Check if localStorage is disabled"
+    ],
+    "arabic_text_issues": [
+      "Verify UTF-8 encoding in index.html",
+      "Check RTL direction attribute",
+      "Test in different browser",
+      "Check Word language settings"
+    ],
+    "styling_not_applied": [
+      "Save CSS file (Ctrl+S)",
+      "Hard refresh browser (Ctrl+Shift+R)",
+      "Check browser DevTools for CSS errors",
+      "Verify file name is styles.css"
+    ]
+  },
+
+  "git_workflow": {
+    "initial_setup": [
+      "cd ~/work/cv-form-generator",
+      "git init",
+      "git add .",
+      "git commit -m 'Initial commit: CV Form Generator MVP'"
+    ],
+    "during_development": [
+      "Make changes",
+      "git add .",
+      "git commit -m 'feat: description of change'",
+      "Repeat"
+    ],
+    "commit_message_examples": [
+      "feat: add dark mode toggle",
+      "fix: word document generation error",
+      "docs: update README",
+      "style: improve button styling",
+      "refactor: simplify form handling",
+      "test: add validation tests"
+    ]
+  },
+
+  "resources": {
+    "documentation_files": [
+      "README.md - Full project documentation",
+      "QUICK_START.md - Getting started guide",
+      "LOCAL_SETUP.md - Local development setup",
+      "CHEATSHEET.md - Quick commands reference",
+      "TODO.md - Feature roadmap",
+      "project.json - This file (metadata)"
+    ],
+    "external_links": {
+      "mdn_web_docs": "https://developer.mozilla.org/",
+      "css_tricks": "https://css-tricks.com",
+      "word_xml_spec": "https://en.wikipedia.org/wiki/Office_Open_XML",
+      "jszip_docs": "https://stuk.github.io/jszip/",
+      "git_guide": "https://git-scm.com/doc"
+    }
+  },
+
+  "development_tips": [
+    "Always save (Ctrl+S) before testing",
+    "Use F12 console to debug JavaScript",
+    "Make small changes and test frequently",
+    "Commit after each working feature",
+    "Keep README.md updated with changes",
+    "Document TODOs with // TODO: comments",
+    "Test on mobile regularly",
+    "Use localStorage for quick testing of data"
+  ],
+
+  "next_steps": {
+    "immediate": [
+      "Copy files to ~/work/cv-form-generator",
+      "Open in Claude Code",
+      "Test in browser with Live Server"
+    ],
+    "first_development_session": [
+      "Pick one easy task from TODO.md",
+      "Make the change",
+      "Test thoroughly",
+      "Commit with git",
+      "Pick next feature"
+    ],
+    "ongoing": [
+      "Follow TODO.md roadmap",
+      "Implement features from the priorities",
+      "Test on multiple browsers",
+      "Commit frequently",
+      "Keep documentation updated"
+    ]
+  },
+
+  "last_updated": "September 2026",
+  "status": "MVP Complete ✅ | Ready for Local Development 🚀",
+  "maintenance": {
+    "frequency": "As needed",
+    "backup": "Use git commits for version control",
+    "testing": "Manual testing via browser"
+  }
+}

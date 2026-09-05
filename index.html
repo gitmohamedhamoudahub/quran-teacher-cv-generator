@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج السيرة الذاتية - محفظ القرآن الكريم</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 نموذج السيرة الذاتية</h1>
+            <p>محفظ القرآن الكريم ومدرس التجويد أونلاين</p>
+        </div>
+
+        <div class="form-content">
+            <div class="status-message" id="statusMessage"></div>
+
+            <div class="tabs">
+                <button class="tab-button active" onclick="switchTab(event, 'personal')">البيانات الشخصية</button>
+                <button class="tab-button" onclick="switchTab(event, 'professional')">النبذة المهنية</button>
+                <button class="tab-button" onclick="switchTab(event, 'qualifications')">المؤهلات</button>
+                <button class="tab-button" onclick="switchTab(event, 'experience')">الخبرة العملية</button>
+                <button class="tab-button" onclick="switchTab(event, 'teaching')">أسلوب التدريس</button>
+            </div>
+
+            <form id="cvForm">
+                <!-- البيانات الشخصية -->
+                <div id="personal" class="tab-content active">
+                    <div class="section">
+                        <div class="section-title">👤 البيانات الشخصية</div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="fullName">الاسم الكامل *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div>
+                                <label for="jobTitle">المسمى المهني *</label>
+                                <input type="text" id="jobTitle" name="jobTitle" value="محفظ قرآن كريم ومدرس تجويد أونلاين">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="location">مكان الإقامة *</label>
+                                <input type="text" id="location" name="location" placeholder="المدينة – الدولة">
+                            </div>
+                            <div>
+                                <label for="yearsExp">سنوات الخبرة *</label>
+                                <input type="number" id="yearsExp" name="yearsExp" min="0">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="phone">الهاتف / واتساب *</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div>
+                                <label for="email">البريد الإلكتروني *</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="languages">اللغات *</label>
+                            <input type="text" id="languages" name="languages" placeholder="العربية – الإنجليزية – لغات أخرى">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- النبذة المهنية -->
+                <div id="professional" class="tab-content">
+                    <div class="section">
+                        <div class="section-title">📝 النبذة المهنية</div>
+
+                        <div class="form-group full">
+                            <label for="biography">النبذة المهنية *</label>
+                            <textarea id="biography" name="biography" required></textarea>
+                            <p class="note">اكتب نبذة توضح خبراتك وتخصصك (200-400 كلمة)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المؤهلات -->
+                <div id="qualifications" class="tab-content">
+                    <div class="section">
+                        <div class="section-title">🎓 المؤهلات العلمية والإجازات القرآنية</div>
+
+                        <div class="form-group full">
+                            <label for="academicQualification">المؤهل العلمي *</label>
+                            <input type="text" id="academicQualification" name="academicQualification">
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="institution">اسم المؤسسة / الجامعة</label>
+                                <input type="text" id="institution" name="institution">
+                            </div>
+                            <div>
+                                <label for="qualYear">سنة الحصول</label>
+                                <input type="number" id="qualYear" name="qualYear" min="1990" max="2100">
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="quranicIjaza">الإجازات القرآنية والأسانيد *</label>
+                            <textarea id="quranicIjaza" name="quranicIjaza" placeholder="مثلاً: إجازة في القرآن الكريم برواية حفص عن عاصم، المجيز: الشيخ ..."></textarea>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="additionalCertificates">الدورات والشهادات التخصصية</label>
+                            <textarea id="additionalCertificates" name="additionalCertificates" placeholder="مثلاً: دورة في أحكام التجويد المتقدمة، دورة طرق التدريس عن بُعد"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الخبرة العملية -->
+                <div id="experience" class="tab-content">
+                    <div class="section">
+                        <div class="section-title">💼 الخبرة في تعليم وتحفيظ القرآن الكريم</div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="positionName">المنصب / المركز *</label>
+                                <input type="text" id="positionName" name="positionName" placeholder="محفظ قرآن كريم">
+                            </div>
+                            <div>
+                                <label for="workPlace">اسم المركز / الأكاديمية / التدريس الخاص</label>
+                                <input type="text" id="workPlace" name="workPlace">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="workFromYear">من سنة</label>
+                                <input type="number" id="workFromYear" name="workFromYear" min="1990" max="2100">
+                            </div>
+                            <div>
+                                <label for="workToYear">إلى سنة / حالياً</label>
+                                <input type="text" id="workToYear" name="workToYear" placeholder="حتى الآن">
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="jobResponsibilities">المسؤوليات والإنجازات *</label>
+                            <textarea id="jobResponsibilities" name="jobResponsibilities" placeholder="اكتب المهام والإنجازات الرئيسية"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="numStudents">عدد الطلاب المدرسين</label>
+                                <input type="number" id="numStudents" name="numStudents" min="0">
+                            </div>
+                            <div>
+                                <label for="targetAges">الفئات العمرية المستهدفة *</label>
+                                <input type="text" id="targetAges" name="targetAges" placeholder="أطفال / مراهقون / شباب / كبار">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- أسلوب التدريس -->
+                <div id="teaching" class="tab-content">
+                    <div class="section">
+                        <div class="section-title">💻 أسلوب التدريس أونلاين</div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="platforms">المنصات المستخدمة *</label>
+                                <input type="text" id="platforms" name="platforms" placeholder="Zoom, Google Meet, WhatsApp">
+                            </div>
+                            <div>
+                                <label for="lessonDuration">مدة الحصة (دقيقة)</label>
+                                <input type="number" id="lessonDuration" name="lessonDuration" placeholder="30 / 45 / 60">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="lessonsPerWeek">عدد الحصص أسبوعياً</label>
+                                <input type="number" id="lessonsPerWeek" name="lessonsPerWeek" placeholder="2 إلى 4">
+                            </div>
+                            <div>
+                                <label for="teachingDays">أيام التدريس</label>
+                                <input type="text" id="teachingDays" name="teachingDays" placeholder="مرن">
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="teachingMethod">منهجية التدريس *</label>
+                            <textarea id="teachingMethod" name="teachingMethod" placeholder="اشرح خطواتك في التدريس (تقييم - خطة مخصصة - حفظ - تصحيح - متابعة)"></textarea>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="achievements">الإنجازات والأنشطة البارزة</label>
+                            <textarea id="achievements" name="achievements" placeholder="مثلاً: تحفيظ X طالب، تدريس طلاب من X دول، الحصول على جوائز"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-save" onclick="saveData()">💾 حفظ البيانات</button>
+                    <button type="button" class="btn-download" onclick="generateDocument()">📥 تنزيل السيرة الذاتية</button>
+                    <button type="button" class="btn-reset" onclick="resetForm()">🔄 حذف البيانات</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
