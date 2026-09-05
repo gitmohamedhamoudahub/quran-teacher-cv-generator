@@ -6,6 +6,8 @@
     <title>نموذج السيرة الذاتية - محفظ القرآن الكريم</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -204,12 +206,16 @@
 
                 <div class="button-group">
                     <button type="button" class="btn-save" onclick="saveData()">💾 حفظ البيانات</button>
-                    <button type="button" class="btn-download" onclick="generateDocument()">📥 تنزيل السيرة الذاتية</button>
+                    <button type="button" class="btn-download" onclick="generateDocument()">📥 تنزيل Word</button>
+                    <button type="button" class="btn-pdf" onclick="generatePDF()">🧾 تنزيل PDF</button>
                     <button type="button" class="btn-reset" onclick="resetForm()">🔄 حذف البيانات</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- Hidden CV template used only to render the PDF (kept off-screen) -->
+    <div id="cvPreview"></div>
 
     <script src="app.js"></script>
 </body>

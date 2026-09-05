@@ -169,6 +169,24 @@ button {
     box-shadow: 0 5px 20px rgba(244, 67, 54, 0.3);
 }
 
+.btn-pdf {
+    background: #ff9800;
+    color: white;
+}
+
+.btn-pdf:hover {
+    background: #f57c00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 152, 0, 0.3);
+}
+
+.btn-pdf:disabled,
+.btn-download:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
 .status-message {
     padding: 15px;
     border-radius: 5px;
@@ -256,4 +274,84 @@ button {
         font-size: 12px;
         white-space: nowrap;
     }
+}
+
+/* ===================================================
+   CV Preview Template (rendered off-screen, captured
+   with html2canvas to build the PDF export)
+   =================================================== */
+#cvPreview {
+    position: fixed;
+    top: 0;
+    left: -10000px;
+    width: 794px; /* A4 width @ 96dpi */
+    background: #ffffff;
+    z-index: -1;
+}
+
+.cv-page {
+    width: 794px;
+    padding: 50px 55px;
+    background: #ffffff;
+    direction: rtl;
+    font-family: 'Segoe UI', 'Tahoma', 'Cairo', sans-serif;
+    color: #2b2b2b;
+    line-height: 1.9;
+}
+
+.cv-header {
+    text-align: center;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.cv-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.cv-title {
+    font-size: 17px;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.cv-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 13px;
+    color: #555;
+}
+
+.cv-section {
+    margin-bottom: 22px;
+}
+
+.cv-section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #667eea;
+    background: #f4f5ff;
+    border-right: 4px solid #667eea;
+    padding: 8px 14px;
+    margin-bottom: 12px;
+}
+
+.cv-section-content {
+    font-size: 14px;
+    padding: 0 6px;
+}
+
+.cv-section-content p {
+    margin-bottom: 8px;
+}
+
+.cv-section-content strong {
+    color: #333;
 }
